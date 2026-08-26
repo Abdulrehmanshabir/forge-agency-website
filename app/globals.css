@@ -1,27 +1,15 @@
 @import "tailwindcss";
 
-:root {
-  --ink: #ffffff;
-  --panel: #f8f8fa;
-  --panel-2: #f0f0f4;
-  --line: #e4e4e7;
-  --fg: #09090b;
-  --muted: #71717a;
-  --primary: #4f46e5;
-  --primary-dim: #a5b4fc;
-  --amber: #d97706;
-}
-
-.dark {
-  --ink: #0a0a0c;
-  --panel: #111116;
-  --panel-2: #191921;
-  --line: #2a2a35;
-  --fg: #f4f4f5;
-  --muted: #a1a1aa;
-  --primary: #818cf8;
-  --primary-dim: #4338ca;
-  --amber: #f5a623;
+:root, .dark {
+  --ink: #020617; /* Deep Space Blue */
+  --panel: #0f172a;
+  --panel-2: #1e293b;
+  --line: #1e293b;
+  --fg: #f8fafc;
+  --muted: #94a3b8;
+  --primary: #06b6d4; /* Electric Cyan */
+  --primary-dim: #0891b2;
+  --amber: #f59e0b;
 }
 
 @theme inline {
@@ -78,6 +66,18 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vh;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .focus-ring:focus-visible {

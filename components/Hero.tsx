@@ -1,147 +1,115 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowDown } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import MagneticButton from "./MagneticButton";
 
-const buildLines = [
-  { t: "$ forge deploy client-brief.json", c: "text-muted" },
-  { t: "> resolving requirements... done", c: "text-primary" },
-  { t: "> compiling services/software-development", c: "text-muted" },
-  { t: "> compiling services/digital-marketing", c: "text-muted" },
-  { t: "> compiling services/ui-ux-design", c: "text-muted" },
-  { t: "✓ 7 services compiled", c: "text-primary" },
-  { t: "> optimizing for conversion...", c: "text-muted" },
-  { t: "> running QA across 6 devices", c: "text-muted" },
-  { t: "✓ zero critical issues", c: "text-primary" },
-  { t: "> deploying to production", c: "text-muted" },
-  { t: "✓ build ready — 120+ projects shipped", c: "text-amber" },
-];
 
 export default function Hero() {
-  const [visible, setVisible] = useState<number>(0);
-
-  useEffect(() => {
-    if (visible >= buildLines.length) return;
-    const timeout = setTimeout(() => setVisible((v) => v + 1), 420);
-    return () => clearTimeout(timeout);
-  }, [visible]);
-
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden pt-28 pb-16 md:pt-20">
-      {/* Premium animated glowing orbs background */}
+    <section className="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden pt-32 pb-16 md:pt-40">
+      {/* Background with Grid and Glowing Orbs */}
+      <div className="absolute inset-0 bg-grid pointer-events-none opacity-50 mask-image:linear-gradient(to_bottom,white,transparent)" />
+      
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[20%] -right-[10%] w-[50vw] h-[50vw] max-w-[800px] max-h-[800px] rounded-full bg-primary/15 blur-[120px]"
-        />
-        <motion.div
-          animate={{
-            x: [0, -40, 0],
-            y: [0, 40, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[30%] -left-[10%] w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] rounded-full bg-primary-dim/20 blur-[120px]"
-        />
-        <motion.div
-          animate={{
-            x: [0, 30, 0],
-            y: [0, -30, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-[20%] left-[20%] w-[60vw] h-[60vw] max-w-[900px] max-h-[900px] rounded-full bg-[#4338ca]/15 blur-[120px]"
-        />
+        <div className="bg-glow" />
       </div>
 
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/50 to-ink pointer-events-none"
-      />
-
-      <div className="relative mx-auto max-w-7xl w-full px-6 md:px-10 grid md:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
-        <div>
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display font-semibold text-[13vw] leading-[0.95] md:text-6xl lg:text-7xl tracking-tight"
-          >
-            We build digital
-            <br />
-            experiences that{" "}
-            <span className="text-gradient">grow businesses.</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-7 text-lg text-muted max-w-lg"
-          >
-            A software development and digital marketing studio for
-            founders and teams who need product, not promises. Strategy,
-            design and engineering — under one roof.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-10 flex flex-wrap items-center gap-4"
-          >
-            <MagneticButton href="/contact">
-              Start a Project <ArrowUpRight size={16} />
-            </MagneticButton>
-            <MagneticButton href="/work" variant="ghost">
-              View Our Work
-            </MagneticButton>
-          </motion.div>
-        </div>
-
+      <div className="relative mx-auto max-w-5xl w-full px-6 flex flex-col items-center text-center z-10">
+        
+        {/* Rating/Trust Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="rounded-2xl border border-line bg-panel/80 backdrop-blur-sm overflow-hidden shadow-2xl shadow-black/40"
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-3 bg-panel-2/50 backdrop-blur-md border border-line rounded-full px-4 py-1.5 mb-8"
         >
-          <div className="flex items-center gap-1.5 px-4 py-3 border-b border-line bg-panel-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
-            <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
-            <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
-            <span className="ml-3 font-mono text-[11px] text-muted">forge.build</span>
-          </div>
-          <div className="p-5 font-mono text-[12px] md:text-[13px] leading-relaxed h-[280px] md:h-[320px] term-scroll overflow-y-auto">
-            {buildLines.slice(0, visible).map((line, i) => (
-              <div key={i} className={line.c}>
-                {line.t}
-              </div>
+          <div className="flex -space-x-2">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="w-6 h-6 rounded-full bg-primary/20 border-2 border-ink flex items-center justify-center text-[8px]">👤</div>
             ))}
-            {visible < buildLines.length && (
-              <span className="inline-block w-2 h-3.5 bg-primary animate-pulse translate-y-0.5" />
-            )}
+          </div>
+          <div className="flex items-center gap-1">
+            <span className="text-amber text-sm">★★★★★</span>
+            <span className="text-xs text-muted font-medium ml-1">125k+ Customer</span>
           </div>
         </motion.div>
-      </div>
 
-      <motion.a
-        href="/services"
-        data-cursor-hover
-        aria-label="Scroll to services"
-        className="focus-ring hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-muted"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 1.8 }}
-      >
-        <span className="font-mono text-[11px] uppercase tracking-widest">Scroll</span>
-        <ArrowDown size={16} />
-      </motion.a>
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="font-display font-semibold text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1] max-w-4xl"
+        >
+          Best Software Solution To <br />
+          The Drive <span className="text-primary">Business Forward</span>
+        </motion.h1>
+
+        {/* Subheadline */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-6 text-base md:text-lg text-muted max-w-2xl"
+        >
+          High-Performance Software Designed To The Streamline Operation Boost Productivity
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-6"
+        >
+          <MagneticButton href="/contact">
+            Book A Free Demo <ArrowUpRight size={16} />
+          </MagneticButton>
+          
+          <button className="group flex items-center gap-3 text-fg hover:text-primary transition-colors focus-ring rounded-full pr-4">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-ink transition-colors">
+              <svg width="14" height="16" viewBox="0 0 14 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 8L0.5 15.7942L0.5 0.205771L14 8Z" />
+              </svg>
+            </div>
+            <span className="font-medium">Play Video</span>
+          </button>
+        </motion.div>
+
+        {/* Video Thumbnail */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16 w-full max-w-4xl aspect-[16/9] rounded-3xl border border-line bg-panel overflow-hidden relative shadow-[0_0_50px_rgba(6,182,212,0.15)] group"
+        >
+          {/* Mock image placeholder */}
+          <div className="absolute inset-0 bg-panel-2 flex items-center justify-center">
+            <div className="w-full h-full bg-gradient-to-tr from-panel to-panel-2 opacity-50" />
+            <div className="absolute w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center backdrop-blur-sm border border-primary/30 group-hover:scale-110 transition-transform cursor-pointer">
+              <svg width="24" height="28" viewBox="0 0 14 16" fill="currentColor" className="text-primary ml-1">
+                <path d="M14 8L0.5 15.7942L0.5 0.205771L14 8Z" />
+              </svg>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Brand Logos */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="mt-20 w-full flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-50 grayscale"
+        >
+          <span className="font-display text-xl font-bold tracking-tight">airbnb</span>
+          <span className="font-display text-xl font-bold tracking-tight">amazon</span>
+          <span className="font-display text-xl font-bold tracking-tight">FedEx</span>
+          <span className="font-display text-xl font-bold tracking-tight">Google</span>
+          <span className="font-display text-xl font-bold tracking-tight">Microsoft</span>
+        </motion.div>
+        
+      </div>
     </section>
   );
 }
