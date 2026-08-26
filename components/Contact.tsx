@@ -65,7 +65,7 @@ export default function Contact() {
     <section id="contact" className="py-28 md:py-36 border-t border-line">
       <div className="mx-auto max-w-7xl px-6 md:px-10 grid lg:grid-cols-[0.9fr_1.1fr] gap-16">
         <div>
-          <span className="font-mono text-xs uppercase tracking-widest text-primary">
+          <span className="font-body text-xs uppercase tracking-widest text-primary">
             Get in touch
           </span>
           <h2 className="font-display font-semibold text-4xl md:text-5xl mt-4 mb-8">
@@ -132,7 +132,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="font-mono text-xs uppercase tracking-widest text-muted">
+                  <label htmlFor="name" className="font-body text-xs uppercase tracking-widest text-muted">
                     Name
                   </label>
                   <input
@@ -145,7 +145,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="font-mono text-xs uppercase tracking-widest text-muted">
+                  <label htmlFor="email" className="font-body text-xs uppercase tracking-widest text-muted">
                     Email
                   </label>
                   <input
@@ -160,7 +160,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="company" className="font-mono text-xs uppercase tracking-widest text-muted">
+                <label htmlFor="company" className="font-body text-xs uppercase tracking-widest text-muted">
                   Company
                 </label>
                 <input
@@ -173,7 +173,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <span className="font-mono text-xs uppercase tracking-widest text-muted">
+                <span className="font-body text-xs uppercase tracking-widest text-muted">
                   Project budget
                 </span>
                 <div className="flex flex-wrap gap-2 mt-3">
@@ -182,7 +182,7 @@ export default function Contact() {
                       type="button"
                       key={b}
                       onClick={() => setBudget(b)}
-                      className={`focus-ring font-mono text-xs px-4 py-2 rounded-full border transition-colors ${
+                      className={`focus-ring font-body text-xs px-4 py-2 rounded-full border transition-colors ${
                         budget === b
                           ? "border-primary text-primary bg-primary/10"
                           : "border-line text-muted hover:border-primary-dim"
@@ -195,7 +195,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="font-mono text-xs uppercase tracking-widest text-muted">
+                <label htmlFor="message" className="font-body text-xs uppercase tracking-widest text-muted">
                   Project details
                 </label>
                 <textarea

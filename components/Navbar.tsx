@@ -49,7 +49,7 @@ export default function Navbar() {
             <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-ink">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
-            TECHNEO
+            Forge<span className="text-primary">&amp;Co</span>
           </a>
 
           {/* Center Links */}
