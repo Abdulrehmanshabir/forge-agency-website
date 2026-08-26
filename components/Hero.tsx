@@ -68,16 +68,6 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-7xl w-full px-6 md:px-10 grid md:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
         <div>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-primary border border-primary-dim rounded-full px-4 py-1.5 mb-8"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Available for new projects
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
