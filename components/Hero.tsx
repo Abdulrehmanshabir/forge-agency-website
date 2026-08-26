@@ -8,9 +8,7 @@ import MagneticButton from "./MagneticButton";
 export default function Hero() {
   return (
     <section className="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden pt-32 pb-16 md:pt-40">
-      {/* Background with Grid and Glowing Orbs */}
-      <div className="absolute inset-0 bg-grid pointer-events-none opacity-50 mask-image:linear-gradient(to_bottom,white,transparent)" />
-      
+      {/* Background with Glowing Orbs (Grid Removed) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="bg-glow" />
       </div>
@@ -40,10 +38,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display font-semibold text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1] max-w-4xl"
+          className="font-display font-semibold text-[11vw] leading-[1] md:text-6xl lg:text-7xl tracking-tight max-w-4xl"
         >
-          Best Software Solution To <br />
-          The Drive <span className="text-primary">Business Forward</span>
+          We build digital<br />
+          experiences that <span className="text-primary">grow businesses.</span>
         </motion.h1>
 
         {/* Subheadline */}
@@ -53,7 +51,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 text-base md:text-lg text-muted max-w-2xl"
         >
-          High-Performance Software Designed To The Streamline Operation Boost Productivity
+          A software development and digital marketing studio for founders and teams who need product, not promises. Strategy, design and engineering — under one roof.
         </motion.p>
 
         {/* Buttons */}

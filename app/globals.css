@@ -23,7 +23,7 @@
   --color-primary-dim: var(--primary-dim);
   --color-amber: var(--amber);
   --font-display: var(--font-outfit);
-  --font-body: var(--font-jakarta);
+  --font-body: var(--font-outfit);
   --font-mono: var(--font-jetbrains);
 }
 

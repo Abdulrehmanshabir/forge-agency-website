@@ -41,42 +41,41 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-ink/85 backdrop-blur-md border-b border-line" : "bg-transparent"
-        }`}
+        className={`fixed top-6 inset-x-0 z-50 flex justify-center px-6 transition-all duration-300`}
       >
-        <nav className="mx-auto max-w-7xl flex items-center justify-between px-6 md:px-10 h-20">
-          <a href="/" data-cursor-hover className="font-display font-semibold text-lg tracking-tight">
-            Forge<span className="text-primary">&amp;Co</span>
+        <nav className="w-full max-w-5xl flex items-center justify-between px-6 py-3 rounded-full bg-panel/70 backdrop-blur-md border border-line shadow-[0_0_20px_rgba(6,182,212,0.05)]">
+          {/* Logo */}
+          <a href="/" data-cursor-hover className="flex items-center gap-2 font-display font-semibold text-lg tracking-tight">
+            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-ink">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            TECHNEO
           </a>
 
-          <ul className="hidden md:flex items-center gap-9 font-mono text-[13px] uppercase tracking-wider text-muted">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  data-cursor-hover
-                  className="focus-ring hover:text-primary transition-colors relative py-1"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+          {/* Center Links */}
+          <ul className="hidden md:flex items-center gap-8 font-body text-sm font-medium text-muted">
+            <li><a href="/" className="hover:text-primary transition-colors text-fg">Home</a></li>
+            <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="/services" className="hover:text-primary transition-colors">Our Service</a></li>
+            <li><a href="/blog" className="hover:text-primary transition-colors">Our Blog</a></li>
+            <li><a href="/contact" className="hover:text-primary transition-colors">Contact</a></li>
           </ul>
 
-          <div className="hidden md:flex items-center gap-4">
-            <ThemeToggle />
-            <MagneticButton href="/contact">
-              Start a Project <ArrowUpRight size={16} />
-            </MagneticButton>
-          </div>
-
-          <div className="flex items-center gap-4 md:hidden">
-            <ThemeToggle />
+          {/* Right section */}
+          <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-3">
+              <a href="/contact" className="focus-ring inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-medium text-sm tracking-wide bg-panel-2 text-fg hover:bg-line transition-colors border border-line">
+                Get Started <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center text-ink"><ArrowUpRight size={12} /></div>
+              </a>
+              <button className="w-10 h-10 rounded-full flex items-center justify-center text-fg hover:text-primary hover:bg-panel-2 transition-colors">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </button>
+            </div>
+            
             <button
               aria-label="Open menu"
               onClick={() => setOpen(true)}
-              className="focus-ring p-2 -mr-2 text-fg"
+              className="focus-ring p-2 -mr-2 text-fg md:hidden"
             >
               <Menu size={26} />
             </button>
